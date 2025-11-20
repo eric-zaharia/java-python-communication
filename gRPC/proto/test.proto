@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package test;
+
+service PythonTaskService {
+  rpc StartLongTask (StartLongTaskRequest) returns (StartLongTaskResponse);
+}
+
+service JavaCallbackService {
+  rpc TaskFinished (TaskResultRequest) returns (TaskResultResponse);
+}
+
+message StartLongTaskRequest {
+  string input = 1;
+}
+
+message StartLongTaskResponse {
+  string job_id = 1;
+}
+
+message TaskResultRequest {
+  string job_id = 1;
+  string result = 2;
+}
+
+message TaskResultResponse {
+  bool ok = 1;
+}
