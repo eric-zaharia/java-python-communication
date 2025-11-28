@@ -1,9 +1,7 @@
 package agent;
 
-import io.lettuce.core.ClientOptions;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.StreamMessage;
-import io.lettuce.core.TimeoutOptions;
 import io.lettuce.core.XReadArgs;
 import io.lettuce.core.api.sync.RedisCommands;
 
