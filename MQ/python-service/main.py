@@ -1,3 +1,5 @@
+from typing import Dict, Any
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 from worker import submit_job
@@ -7,7 +9,7 @@ app = FastAPI()
 class InferenceRequest(BaseModel):
     agent_id: str
     job_id: str
-    payload: dict
+    payload: Dict[str, Any]
 
 
 @app.post("/infer")
